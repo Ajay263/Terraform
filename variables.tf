@@ -1,31 +1,20 @@
 locals {
-  data_lake_bucket = "coin-tracker_data_lake"
+    labels = {
+        "data-project" = var.data-project
+    }
 }
 
 variable "project" {
-  description = "Your GCP Project ID"
-  default = "coin-tracker-1"
+    type= string
+    description = "ID Google project"
 }
 
 variable "region" {
-  description = "Region for GCP resources. Choose as per your location: https://cloud.google.com/about/locations"
-  default = "us-central1"
-  type = string
+    type= string
+    description = "Region Google project"
 }
 
-
-variable "storage_class" {
-  description = "Storage class type for your bucket. Check official docs for more info."
-  default = "STANDARD"
+variable  "data-project" {
+    type = string
+    description = "Name of data pipeline project to use as resource prefix"
 }
-
-variable "BQ_DATASET" {
-  description = "BigQuery Dataset that raw data (from GCS) will be written to"
-  type = string
-  default = "coin-tracker_datawahouse"
-}
-
-
-
-
-
