@@ -32,11 +32,11 @@ jobs:
       id: vars
       run: |-
         cat > pipeline.auto.tfvars <<EOF
-        region="${{ vars.GCP_REGION }}" 
-        project="${{ vars.GCP_PROJECT }}" 
-        zone="${{ vars.GCP_ZONE}}"
-        data_lake_bucket="${{ vars.GCP_DATALAKE}}"
-        BQ_DATASET="${{ vars.GCP_BQ_DATASET}}"
+        region="${{ secrets.GCP_REGION }}" 
+        project="${{ secrets.GCP_PROJECT }}" 
+        zone="${{ secrets.GCP_ZONE}}"
+        data_lake_bucket="${{ secrets.GCP_DATALAKE }}"
+        BQ_DATASET="${{ secrets.GCP_BQ_DATASET }}"
         
         EOF
         
