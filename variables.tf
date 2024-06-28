@@ -13,6 +13,11 @@ variable "zone" {
   type        = string
 }
 
+variable "data_lake_bucket" {
+  type        = string
+  description = "Name of the data lake bucket"
+}
+
 variable "storage_class" {
   description = "Storage class type for your bucket. Check official docs for more info."
   default     = "STANDARD"
