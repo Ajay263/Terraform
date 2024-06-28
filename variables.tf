@@ -1,20 +1,30 @@
-locals {
-    labels = {
-        "data-project" = var.data-project
-    }
-}
-
 variable "project" {
-    type= string
-    description = "ID Google project"
+  type        = string
+  description = "ID Google project"
 }
 
 variable "region" {
-    type= string
-    description = "Region Google project"
+  type        = string
+  description = "Region Google project"
 }
 
-variable  "data-project" {
-    type = string
-    description = "Name of data pipeline project to use as resource prefix"
+variable "zone" {
+  description = "Zone for compute instance"
+  type        = string
+}
+
+variable "storage_class" {
+  description = "Storage class type for your bucket. Check official docs for more info."
+  default     = "STANDARD"
+}
+
+variable "data_project" {  # Corrected variable name to use underscores instead of hyphens
+  type        = string
+  description = "Name of data pipeline project to use as resource prefix"
+}
+
+variable "BQ_DATASET" {
+  description = "BigQuery Dataset that raw data (from GCS) will be written to"
+  type        = string
+  default     = "coin-tracker_datawarehouse"
 }
