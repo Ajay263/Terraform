@@ -23,10 +23,6 @@ variable "storage_class" {
   default     = "STANDARD"
 }
 
-variable "data_project" {  # Corrected variable name to use underscores instead of hyphens
-  type        = string
-  description = "Name of data pipeline project to use as resource prefix"
-}
 
 variable "BQ_DATASET" {
   description = "BigQuery Dataset that raw data (from GCS) will be written to"
