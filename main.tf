@@ -1,6 +1,6 @@
 terraform {
     backend "gcs" { 
-      bucket  = "terraform-statefile"
+      bucket  = "coin-tracker-terraform-state-bucket"
       prefix  = "prod"
     }
 }
