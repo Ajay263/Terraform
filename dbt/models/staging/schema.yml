@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: staging
-    database: flight-analytics-replicate
-    schema: flights_stg
+    database: coin-tracker-1
+    schema: bq_coin_tracker_dwh
 
     tables:
       - name: external_table_hourly_flights
